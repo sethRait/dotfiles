@@ -1,9 +1,11 @@
+execute pathogen#infect()
 set t_Co=256
 syntax on
 let g:gruvbox_italic=1
 colorscheme gruvbox 
 set background=dark
 set nu
+set cc=81
 
 " Enable buffers without saving
 set hidden
@@ -21,5 +23,8 @@ set tabstop=4
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
-nnoremap <space> za
-set foldmethod=indent
+set foldmethod=syntax
+
+" Airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled=1

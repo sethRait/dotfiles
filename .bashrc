@@ -1,6 +1,12 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+weather() { curl wttr.in/"$1"; }
+
+alias plz="fc -l -1 | cut -d' ' -f2- | xargs sudo"
+alias android="exec /usr/local/android-studio/bin/studio.sh"
+alias chrome="google-chrome"
+alias top="htop" # better looking top
+
+# this is in /.ssh/config now
+#alias gpu="ssh -p 443 srait@gpgpu.cs-i.brandeis.edu"
 
 # If not running interactively, don't do anything
 case $- in
@@ -115,3 +121,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+export http_proxy=''
+export https_proxy=''
+export ftp_proxy=''
+export socks_proxy=''
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
